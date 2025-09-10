@@ -1,0 +1,9 @@
+<!-- Placeholder for PWA icon - in production, this would be a proper PNG -->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="50" fill="#2563eb"/>
+  <circle cx="256" cy="256" r="100" stroke="white" stroke-width="10" fill="none"/>
+  <circle cx="256" cy="220" r="8" fill="white"/>
+  <line x1="256" y1="256" x2="256" y2="320" stroke="white" stroke-width="6"/>
+  <line x1="220" y1="256" x2="292" y2="256" stroke="white" stroke-width="6"/>
+  <text x="256" y="400" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="36" font-weight="bold">DOPE</text>
+</svg>
