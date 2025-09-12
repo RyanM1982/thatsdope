@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="That's DOPE - Military-Grade Ballistics Calculator for Tactical Long-Range Shooting" />
+    <meta name="theme-color" content="#8b9c5e" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+    
+    <!-- Apple PWA Meta Tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="That's DOPE" />
+    <link rel="apple-touch-icon" href="./pwa-192x192.png" />
+    
+    <!-- Microsoft PWA Meta Tags -->
+    <meta name="msapplication-TileColor" content="#8b9c5e" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="That's DOPE - Tactical Ballistics Calculator" />
+    <meta property="og:description" content="Military-Grade Ballistics Calculator for Tactical Long-Range Shooting" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./pwa-512x512.png" />
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <title>That's DOPE - Tactical Ballistics Calculator</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Loading state for GitHub Pages redirect -->
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: system-ui, sans-serif;">
+        <div style="text-align: center;">
+          <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #8b9c5e; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 20px;"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+      <style>
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+      </style>
+    </div>
+    
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+      <div style="text-align: center; padding: 2rem; font-family: system-ui, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>This ballistics calculator requires JavaScript to function properly.</p>
+        <p>Please enable JavaScript in your browser and reload the page.</p>
+      </div>
+    </noscript>
+    
+    <!-- GitHub Pages SPA redirect script -->
+    <script>
+      // Single Page Applications for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // Modified for /thatsdope/ base path
+      (function(l) {
+        if (l.pathname.length > 0) {
+          // Extract the path after /thatsdope/
+          var pathSegments = l.pathname.split('/').filter(function(segment) {
+            return segment.length > 0;
+          });
+          
+          // If this is a 404 for a route under /thatsdope/, redirect to index with search params
+          if (pathSegments.length > 1 && pathSegments[0] === 'thatsdope') {
+            var redirectPath = '/' + pathSegments.slice(1).join('/');
+            var searchParams = '?/' + redirectPath + (l.search || '') + (l.hash || '');
+            
+            // Redirect to the base index page with encoded path
+            window.location.replace(l.protocol + '//' + l.host + '/thatsdope/' + searchParams);
+          }
+        }
+      }(window.location))
+    </script>
+
+  </body>
+</html>
