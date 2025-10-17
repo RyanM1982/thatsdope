@@ -1,0 +1,174 @@
+{
+  "name": "DOPE Mobile Competition Manager",
+  "short_name": "DOPE Mobile",
+  "description": "Mobile-optimized competition management system for IPSC, USPSA, and IDPA shooting sports",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#000000",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "icons": [
+    {
+      "src": "favicon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile-score-entry.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile Score Entry Interface"
+    },
+    {
+      "src": "screenshots/mobile-timer.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Timer Interface with Squad Management"
+    },
+    {
+      "src": "screenshots/mobile-dashboard.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Live Match Dashboard"
+    },
+    {
+      "src": "screenshots/tablet-overview.png",
+      "sizes": "1024x768",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tablet Match Management Overview"
+    }
+  ],
+  "categories": ["sports", "utilities", "productivity", "tools"],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "shortcuts": [
+    {
+      "name": "Quick Score Entry",
+      "short_name": "Score",
+      "description": "Start scoring immediately",
+      "url": "/mobile-score-entry",
+      "icons": [
+        {
+          "src": "icons/score-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Timer Interface",
+      "short_name": "Timer",
+      "description": "Launch timer for stage timing",
+      "url": "/mobile-timer",
+      "icons": [
+        {
+          "src": "icons/timer-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Match Dashboard",
+      "short_name": "Dashboard",
+      "description": "View live match statistics",
+      "url": "/mobile-dashboard",
+      "icons": [
+        {
+          "src": "icons/dashboard-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+dope",
+      "url": "/handle-protocol?protocol=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/import-match",
+      "accept": {
+        "application/json": [".json"],
+        "text/csv": [".csv"]
+      },
+      "launch_type": "single-client"
+    }
+  ],
+  "share_target": {
+    "action": "/share-match",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "files": [
+        {
+          "name": "match_data",
+          "accept": [".json", ".csv", ".txt"]
+        }
+      ]
+    }
+  },
+  "handle_links": "preferred"
+}
